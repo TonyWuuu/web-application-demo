@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @EnableAutoConfiguration
 public class SampleController {
     @GetMapping("/greeting")
-    public String index() {
+    public String greeting() {
         return "greeting.html";
     }
 
