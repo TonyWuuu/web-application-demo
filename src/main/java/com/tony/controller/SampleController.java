@@ -3,12 +3,10 @@ package com.tony.controller;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpServletRequest;
-import java.text.DateFormat;
-import java.util.Date;
 
 @Controller
 @EnableAutoConfiguration
@@ -18,16 +16,16 @@ public class SampleController {
         return "greeting.html";
     }
 
-    @RequestMapping("/hello")
-    public String hello(Model m) {
-        m.addAttribute("now", DateFormat.getDateTimeInstance().format(new Date()));
-        return "hello";
+    @GetMapping("/jsp")
+    public String jspPage(Model model,@RequestParam String name) {
+        model.addAttribute("name", name);
+        return "jsp/sample";
     }
 
-    @RequestMapping("/thymeleaf")
-    public String hello(HttpServletRequest request, @RequestParam(value = "name", required = false, defaultValue = "springboot-thymeleaf") String name) {
-        request.setAttribute("name", name);
-        return "thymeleaf";
+    @GetMapping("/thymeleaf")
+    public String thymeleafPage(Model model,@RequestParam String name) {
+        model.addAttribute("name", name);
+        return "thymeleaf/sample";
     }
 
 }
