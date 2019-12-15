@@ -1,18 +1,38 @@
 package com.tony.entity;
 
-import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Entity(name="tbl_user")
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+@Setter
+@Getter
+@ToString
+@Entity
+@Table(name = "user")
 public class User {
+    static Logger log = LoggerFactory.getLogger(User.class);
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    @Column
-    private String username;
-    @Column
-    private String phone;
-    @Column
-    private String password;
+    int id;
+    @Column(name = "username")
+    String username;
+    @Column(name = "password")
+    String password;
 
-//getter和setter
+    public User() {
+
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 }

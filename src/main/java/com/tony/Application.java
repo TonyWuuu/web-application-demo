@@ -11,24 +11,17 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+
+@SpringBootApplication
 @EnableAutoConfiguration
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
-@EntityScan("com.tony.entity")
+@EnableJpaRepositories
 public class Application {
-    private static final Logger logger = LogManager.getLogger(Application.class);
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
-    @Bean
-    public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
-        return args -> {
-
-           logger.debug("Let's inspect the beans provided by Spring Boot:");
-
-
-        };
-    }
 
 }
