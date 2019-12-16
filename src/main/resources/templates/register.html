@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<div>页面跳转成功</div>
+<form action="/register" class="form-horizontal"  method="post">
+    <!--class属性在css用 action属性后接映射名在控制器里面有 method属性一般都是post -->
+
+    <input type="text" class="form-control" placeholder="账号" name="username"/>
+    <!--type说明他是文本输入框  name后接实体类的类成员名字，不然传不出去！！-->
+
+    <input type="password" class="form-control" placeholder="密码" name="password"/>
+    <input type="submit"  class="btn btn-info"/>
+    <!--提交按钮-->
+
+    <a class="btn btn-success" href="/miao">Back</a>
+</form>
+</body>
+
+</html>
