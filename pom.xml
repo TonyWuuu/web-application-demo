@@ -24,7 +24,7 @@
         <h2.version>1.4.192</h2.version>
         <tomcat.embed.jasper.version>9.0.21</tomcat.embed.jasper.version>
         <jstl.version>1.2</jstl.version>
-        <webjars.bootstrap.version>3.3.5</webjars.bootstrap.version>
+        <webjars.bootstrap.version>3.4.1</webjars.bootstrap.version>
         <webjars.jquery.version>3.4.1</webjars.jquery.version>
         <webjars.locator.version>0.37</webjars.locator.version>
 
